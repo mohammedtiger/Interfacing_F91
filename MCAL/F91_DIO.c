@@ -141,7 +141,7 @@ void F91_void_WritePort(unsigned char port , char value)
 		break;
 	case 'D':
 	case 'd':
-		PORTB = value;
+		PORTD = value;
 
 		break;
 	case 'C':

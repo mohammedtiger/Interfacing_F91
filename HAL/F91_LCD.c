@@ -80,8 +80,10 @@ void F91_void_LCD_Send_Command(unsigned char command)
 
 void F91_void_LCD_init_Command(unsigned char command)
 {
-	F91_void_WritePort(LCD_DATA_PORT, command >> 4);
 	F91_void_Writpin(LCD_RS_PORT , LCD_RS_PIN , LOW);
+
+
+	F91_void_WritePort(LCD_DATA_PORT, WRITE_MOST(command));
 	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
 	_delay_ms(1);
 	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
@@ -113,13 +115,13 @@ void F91_void_initLCD()
 }
 
 
-void EF_void_LCD_Clear_Screen(void)
+void F91_void_LCD_Clear_Screen(void)
 {
 	F91_void_LCD_Send_Command(0x01);
 	_delay_ms(10);
 }
 
-void EF_void_LCD_print( char *string)
+void F91_void_LCD_print( char *string)
 {
 	int i = 0;
 
@@ -131,7 +133,7 @@ void EF_void_LCD_print( char *string)
 }
 
 
-void EF_void_LCD_goto(char y, char x)
+void F91_void_LCD_goto(char y, char x)
 {
 	char firstAddress[] = {0x80,0xC0,0x94,0xD4};
 

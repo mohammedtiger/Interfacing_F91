@@ -32,10 +32,10 @@ enum
 };
 
 void F91_void_initLCD();
-void EF_void_LCD_Clear_Screen(void);
-void EF_void_LCD_print( char *string);
+void F91_void_LCD_Clear_Screen(void);
+void F91_void_LCD_print( char *string);
 void F91_void_LCD_Send_Data(unsigned char data);
-void EF_void_LCD_goto(char y, char x);
+void F91_void_LCD_goto(char y, char x);
 
 
 
