@@ -5,7 +5,7 @@
 
 void F91_void_ADC_Init(char Mux)
 {
-	ADMUX = (1 << REFS0)|(1 << REFS1) | Mux;
+	ADMUX = (1 << REFS0) | Mux;
 	ADCSRA = (1 << ADEN) |(1 << ADPS1) | (1 << ADPS2)| (1 << ADPS0);
 }
 
