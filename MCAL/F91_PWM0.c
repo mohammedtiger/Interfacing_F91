@@ -5,7 +5,7 @@
 #include "../Services_layers/Services_layers.h"
 void F91_void_PWM_init()
 {
-	F91_void_Initpin(PWM_PORT , PWM_PIN , OUTPUT);
+	F91_void_DIO_Initpin(PWM_PORT , PWM_PIN , OUTPUT);
 	//-------------------Set Fast PWM ---------------------
 	F91_SETBIT(PWM_CONTROL_REG , WGM01);
 	F91_SETBIT(PWM_CONTROL_REG , WGM00);

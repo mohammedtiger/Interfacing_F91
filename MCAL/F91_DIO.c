@@ -1,7 +1,7 @@
 #include <avr/io.h>
 #include "F91_DIO.h"
 
-void F91_void_Initpin(char port ,int number , int Dir)
+void F91_void_DIO_Initpin(char port ,int number , int Dir)
 {
 
 	switch(port)
@@ -50,7 +50,7 @@ void F91_void_Initpin(char port ,int number , int Dir)
 	}
 }
 
-void F91_void_Writpin(char port ,int number , int Dir)
+void F91_void_DIO_Writpin(char port ,int number , int Dir)
 {
 
 	switch(port)
@@ -100,7 +100,7 @@ void F91_void_Writpin(char port ,int number , int Dir)
 }
 
 
-void F91_void_InitPort(unsigned char port , char value)
+void F91_void_DIO_InitPort(unsigned char port , char value)
 {
 
 	switch(port)
@@ -126,7 +126,7 @@ void F91_void_InitPort(unsigned char port , char value)
 
 	}
 }
-void F91_void_WritePort(unsigned char port , char value)
+void F91_void_DIO_WritePort(unsigned char port , char value)
 {
 
 	switch(port)
@@ -153,7 +153,7 @@ void F91_void_WritePort(unsigned char port , char value)
 	}
 }
 
-char F91_char_Readpin(char port , char number)
+char F91_char_DIO_Readpin(char port , char number)
 {
 	switch(port)
 	{

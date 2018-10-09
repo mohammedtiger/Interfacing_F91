@@ -45,48 +45,48 @@
 
 void F91_void_LCD_Send_Data(unsigned char data)
 {
-	F91_void_Writpin(LCD_RS_PORT , LCD_RS_PIN , HIGH);
+	F91_void_DIO_Writpin(LCD_RS_PORT , LCD_RS_PIN , HIGH);
 
 
-	F91_void_WritePort(LCD_DATA_PORT, WRITE_MOST(data));
-	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
+	F91_void_DIO_WritePort(LCD_DATA_PORT, WRITE_MOST(data));
+	F91_void_DIO_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
 	_delay_ms(1);
-	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
+	F91_void_DIO_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
 	_delay_ms(1);
 
-	F91_void_WritePort(LCD_DATA_PORT, WRITE_LEST(data));
-	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
+	F91_void_DIO_WritePort(LCD_DATA_PORT, WRITE_LEST(data));
+	F91_void_DIO_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
 	_delay_ms(1);
-	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
+	F91_void_DIO_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
 	_delay_ms(1);
 }
 
 void F91_void_LCD_Send_Command(unsigned char command)
 {
-	F91_void_Writpin(LCD_RS_PORT , LCD_RS_PIN , LOW);
+	F91_void_DIO_Writpin(LCD_RS_PORT , LCD_RS_PIN , LOW);
 
-	F91_void_WritePort(LCD_DATA_PORT, WRITE_MOST(command));
-	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
+	F91_void_DIO_WritePort(LCD_DATA_PORT, WRITE_MOST(command));
+	F91_void_DIO_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
 	_delay_ms(1);
-	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
+	F91_void_DIO_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
 	_delay_ms(1);
 
-	F91_void_WritePort(LCD_DATA_PORT, WRITE_LEST(command));
-	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
+	F91_void_DIO_WritePort(LCD_DATA_PORT, WRITE_LEST(command));
+	F91_void_DIO_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
 	_delay_ms(1);
-	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
+	F91_void_DIO_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
 	_delay_ms(1);
 }
 
 void F91_void_LCD_init_Command(unsigned char command)
 {
-	F91_void_Writpin(LCD_RS_PORT , LCD_RS_PIN , LOW);
+	F91_void_DIO_Writpin(LCD_RS_PORT , LCD_RS_PIN , LOW);
 
 
-	F91_void_WritePort(LCD_DATA_PORT, WRITE_MOST(command));
-	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
+	F91_void_DIO_WritePort(LCD_DATA_PORT, WRITE_MOST(command));
+	F91_void_DIO_Writpin(LCD_EN_PORT , LCD_EN_PIN , HIGH);
 	_delay_ms(1);
-	F91_void_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
+	F91_void_DIO_Writpin(LCD_EN_PORT , LCD_EN_PIN , LOW);
 	_delay_ms(1);
 
 }
@@ -94,9 +94,9 @@ void F91_void_LCD_init_Command(unsigned char command)
 void F91_void_initLCD()
 {
 
-	F91_void_InitPort(LCD_DATA_PORT , 0x0F);
-	F91_void_Initpin(LCD_EN_PORT , LCD_EN_PIN , OUTPUT);
-	F91_void_Initpin(LCD_RS_PORT , LCD_RS_PIN , OUTPUT);
+	F91_void_DIO_InitPort(LCD_DATA_PORT , 0x0F);
+	F91_void_DIO_Initpin(LCD_EN_PORT , LCD_EN_PIN , OUTPUT);
+	F91_void_DIO_Initpin(LCD_RS_PORT , LCD_RS_PIN , OUTPUT);
 	/* after power up , delay 10ms should be existed */
 	F91_void_LCD_init_Command(0x30);
 	_delay_ms(10);

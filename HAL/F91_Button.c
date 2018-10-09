@@ -7,11 +7,11 @@
 
 void F91_void_Init_Buttons()
 {
-	F91_void_Initpin('A' , 0 , INPUT);
-	F91_void_Initpin('D' , 2 , INPUT);
+	F91_void_DIO_Initpin('A' , 0 , INPUT);
+	F91_void_DIO_Initpin('D' , 2 , INPUT);
 
-	F91_void_Writpin('A' , 0 , HIGH);
-	F91_void_Writpin('D' , 2 , HIGH);
+	F91_void_DIO_Writpin('A' , 0 , HIGH);
+	F91_void_DIO_Writpin('D' , 2 , HIGH);
 
 
 }
@@ -19,9 +19,9 @@ void F91_void_Init_Buttons()
 
 char F91_char_ReadButton_1()
 {
-	return F91_char_Readpin('A' , 0);
+	return F91_char_DIO_Readpin('A' , 0);
 }
 char F91_char_ReadButton_2()
 {
-	return F91_char_Readpin('D' , 2);
+	return F91_char_DIO_Readpin('D' , 2);
 }

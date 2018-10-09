@@ -20,4 +20,9 @@ enum
 };
 
 
+enum
+{
+	ERROR = -1
+};
+
 #endif /* SERVICES_LAYERS_H_ */

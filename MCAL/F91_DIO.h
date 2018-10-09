@@ -14,10 +14,10 @@
 #define F91_READBIT(portname , pinnumber) (portname & (1 << pinnumber))
 
 
-void F91_void_Initpin(char port ,int number , int Dir);
-void F91_void_Writpin(char port ,int number , int Dir);
-void F91_void_InitPort(unsigned char port , char value);
-void F91_void_WritePort(unsigned char port , char value);
-char F91_char_Readpin(char port , char number);
+void F91_void_DIO_Initpin(char port ,int number , int Dir);
+void F91_void_DIO_Writpin(char port ,int number , int Dir);
+void F91_void_DIO_InitPort(unsigned char port , char value);
+void F91_void_DIO_WritePort(unsigned char port , char value);
+char F91_char_DIO_Readpin(char port , char number);
 
 #endif /* F91_DIO_H_ */
