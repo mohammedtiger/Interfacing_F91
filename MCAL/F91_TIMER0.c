@@ -6,8 +6,7 @@
 #include "../Services_layers/Services_layers.h"
 #include "../HAL/F91_Leds.h"
 
-volatile unsigned long counter = 0;
-volatile unsigned long counter1 = 0;
+volatile unsigned long Timer_counter[TIMER_SIZE];
 
 void F91_void_TIMER0_init()
 {
@@ -16,12 +15,24 @@ void F91_void_TIMER0_init()
 	sei();
 }
 
+long F91_long_TIMER0_Getvalue(int index )
+{
+	return Timer_counter[index];
+}
+
+void F91_void_TIMER0_Setvalue(int index , long value )
+{
+	Timer_counter[index] = value;
+}
 
 ISR(TIMER0_OVF_vect)
 {
-	counter++;
-	counter1++;
 
+
+	for(int index = 0; index < 10 ; index ++)
+	{
+		Timer_counter[index] ++;
+	}
 
 
 

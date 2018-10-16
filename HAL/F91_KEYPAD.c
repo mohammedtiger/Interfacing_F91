@@ -27,7 +27,7 @@ char F91_char_KEYPAD_COLUMN_1_read()
 	F91_void_DIO_Writpin(COLUMN_PORT , COLUMN_PIN2 , HIGH);
 	F91_void_DIO_Writpin(COLUMN_PORT , COLUMN_PIN3 , HIGH);
 
-	if(F91_char_DIO_Readpin(ROW_PORT , ROW_PIN1) == 0)
+	if(F91_char_DIO_Readpin(ROW_PORT , ROW_PIN1) == LOW)
 	{
 		return NUMBER_1;
 	}
